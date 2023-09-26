@@ -15,7 +15,7 @@ for cartao in use_cases.lista_cartoes():
 
 use_cases.cadastra_compra(2, 100.0, 'Alimentação', 'Pizzaria Romana')
 use_cases.cadastra_compra(2, 150.0, 'Lazer', 'Show de jazz')
-use_cases.cadastra_compra(3, 200.0, 'Alimentação', 'Rodizio de frutos do mar')
+use_cases.cadastra_compra(3, 200.0, 'Alimentação', 'Rodízio de frutos do mar')
 use_cases.cadastra_compra(3, 250.0, 'Lazer', 'Show de rock')
 use_cases.cadastra_compra(3, 300.0, 'Educação', 'Assinatura da Alura')
 
