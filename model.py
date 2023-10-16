@@ -5,7 +5,6 @@ from dateutil.relativedelta import relativedelta
 from excecoes import ValorExcedidoException 
 import re
 
-
 class Cartao:
     def __init__(self, numero, validade, cvv, limite, cliente, id = None):
         self.__numero = numero
@@ -58,7 +57,6 @@ class Cartao:
     def __str__(self):
         return (f'Cartão(#{self.id}) {self.numero} do(a) {self.cliente} com limite de {self.limite} válido até {self.validade}')
 
-
     def __set__limite(self, limite):
         limite_minimo = 10
         
@@ -66,7 +64,6 @@ class Cartao:
             raise ValueError(f'O limite deve ser de no mínimo {limite_minimo}')
         
         self.__limite = limite
-
 
     def __set_cliente(self, cliente):
         if not isinstance(cliente, str) or len(cliente.split()) != 2:
@@ -78,7 +75,6 @@ class Cartao:
                 raise ValueError("Cada nome deve ter pelo menos dois caracteres.")
             
         self.__cliente = cliente
-
 
 class Compra:
     def __init__(self, valor, data, estabelecimento, categoria, cartao, id = None):
@@ -108,7 +104,6 @@ class Compra:
     def categoria(self):
         return self.__categoria
 
-
     def __set__estabelecimento(self, estabelecimento):
         limite_caracteres = 30
         tamanho_estabelecimento = len(estabelecimento)
@@ -118,20 +113,17 @@ class Compra:
     
         self.__estabelecimento = estabelecimento.strip()
 
-
     def __set__valor(self, valor):
         if valor <= 0:
             raise ValueError(f"O valor {valor} deve ser superior a zero")
         
         self.__valor = valor
 
-
     def __set__cartao(self, cartao):
         if cartao is None:
             raise ValueError("É obrigatório um cartão")
         
         self.__cartao = cartao
-
 
     def valida_compra(self):
         limite = self.__cartao.limite
@@ -140,7 +132,6 @@ class Compra:
         if valor > limite:
             valor_excedido = valor - limite
             raise ValorExcedidoException(f'O valor da compra excedeu ${valor_excedido} do limite') 
-
 
 class CompraCredito(Compra):
     def __init__(self, valor, data, estabelecimento, categoria, cartao, quantidade_parcelas = 1, id = None):
@@ -171,8 +162,8 @@ def define_validade_do_cartao():
     validade = date.today() + relativedelta(years=4, months=6, day=31)
     return validade
 
-
     
+
 
 
 

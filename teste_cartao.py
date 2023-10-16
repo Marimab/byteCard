@@ -47,9 +47,4 @@ cartao_invalido = Cartao(
     date(2029, 5, 31),
     '887',
     10000.0,
-    'William Noronha') 
-
-
-
-
-
+    'William Noronha')
