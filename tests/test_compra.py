@@ -15,7 +15,7 @@ class TestCompra:
 
             compra = Compra(100.0,
                             datetime(2023, 1, 1, 10, 0, 0),
-                            'Farmácia Popular Brasileira SA ',
+                            'Droga Raia SA ',
                             'Saúde',
                             visa)
 
