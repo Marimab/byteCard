@@ -1,6 +1,5 @@
 from datetime import date,datetime
 import pytest
-from excecoes import ValorExcedidoException
 from model import Cartao, Compra
 class TestCompra:
 
